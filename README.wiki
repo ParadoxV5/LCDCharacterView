@@ -1,0 +1,21 @@
+=LCDCharacterView=
+A small Arduino app that displays the characters of your Hitachi HD44780 LCD.
+
+Designed for LCDs with 16-characters in width, and optimally 2-characters in height.
+
+Empty pages <tt>0?</tt>, <tt>1?</tt>, <tt>8?</tt> and <tt>9?</tt> are skipped.
+
+==Example output==
+<pre>
+40 - 4F
+@ABCDEFGHIJKLMNO
+</pre>
+
+==Pins==
+Pins are defined as <tt>const byte</tt>s:
+; <tt>RS, E,</tt><br /><tt>D4, D5, D6, D7</tt>
+: <tt>LiquidCrystal</tt> pins.
+; <tt>LED</tt>
+: [Optional Output] Status indicator LED. Turns <tt>HIGH</tt> when a valid input is registered and until both inputs are <tt>LOW</tt>. The default pin <tt>13</tt> is simply the pin attached to the built-in LED for most boards.
+; <tt>LEFT, RIGHT</tt>
+: [Input] The (button) inputs to flip to the previous or next page, respectively.
